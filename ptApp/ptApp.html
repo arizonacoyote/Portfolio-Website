@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ptApp.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,300&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">   
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Physical Therapist's App</title>
+</head>
+<body>
+    
+
+
+
+
+<div id="patientManagementModal" >
+ <!--   <div id="closeVidModal" style="display: inline; position: absolute; right:1vw; text-align:right; padding: .3vw;"><i class="fas fa-times"></i></div>-->
+    <h2 style="text-align:center; letter-spacing: -0.04em; font-weight: 600;">Patient Management Web App</h2>
+    <h5 style="text-align:center; width: min(65ch,95%); position: relative; left: 50%; transform: translate(-50%,0%)">
+        A basic, but usable web app for heathcare providers.  
+        Intended to facilitate appointment scheduling, storage of patient data 
+        and visit records, patient-provider communication, video sharing, and 
+        new patient contacts through a landing page contact form.</h5>
+    <div style="position: relative; left: 50%; transform: translate(-50%,0);text-align:center; width: max(15ch,25%)">
+        <a href="../index.html" style="text-decoration:none">
+            <button id='ptScreenReturnBtn'class="btn btn-block btn-primary m-3" ><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp <strong>Home</strong></button>
+        </a>
+    </div>
+    <!-- <p style="text-align: center; max-width: 60ch; margin-left: auto; margin-right: auto;">Provides a basic landing page and patient management system. </p> -->
+    <hr>
+    <div id="patientManagementModalcontainer">
+       <!-- <div id="adminSide" class="gridTgt1">  --> 
+            <div class="gridTgt1_1" id="gridBox1">
+                <h4 style="text-align:center; font-weight: 600; color:#0080D1; padding-top: 3vh">Administration Portal</h4>
+                <p class="vidModalText">Below is a video demonstrating the administration page of the app.
+                In the video, we can view:
+               
+                    <ul class="vidModalList">
+                        <div>
+                            <li class="listItemModal"><strong>Potential client contacts</strong> An area summarizing website contact form submissions received from prospective patients.</li>
+                            <li class="listItemModal"><strong>Messages from patients</strong> An area displaying messages from current patients submitted through their personal information pages.</li>
+                            <li class="listItemModal"><strong>Patient Summary</strong> A summary of current patients listed and sorted by next scheduled apppointment, with newly created patients at the top of the list.</li>
+                            <li class="listItemModal"><strong>Visit summaries</strong> Not shown are visit summaries which are archived and accessed on the patient information page.</li>
+                        </div>
+                        <div>
+                            <li class="listItemModal"><strong>New user creation</strong> The creation of a new user in the patient database, which is implemented in Firebase's cloud Firestore, and secured by Firestore rules and authentication.</li>
+                            <li class="listItemModal"><strong>Patient fillable forms</strong> A button on the admin page grants patients the ability to fill out and edit patient data. </li>
+                            <li class="listItemModal"><strong>Appointment Scheduling</strong> A form for scheduling appointments is provided which then updates the patient database and Google Calendar.</li>
+                            <li class="listItemModal"><strong>Video Embedding</strong> Videos can be embedded by the provider for patients to view in their personalized webpage.</li>
+                        </div>
+                    </ul>
+                </p>
+            </div>
+            <div class="gridTgt1_2" id="gridBox2">
+                <div class="iframeContainer">
+                    <iframe  class="responsive-iframe"  src="https://player.vimeo.com/video/519798706" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        <!--</div>  -->
+        <!--<div id="clientSide" class="gridTgt1">-->
+            <div class="gridTgt1_1" id="gridBox3">
+                <h4 style="text-align:center; font-weight: 600; color:#0080D1;padding-top:3vh;">Landing Page and Patient's Portal</h4>
+                <p class="vidModalText">
+                    Below is a video showing the provider's landing page, login page and personalized webpage.  One can see the following:  
+                    <ul class="vidModalList">
+                        <div>
+                            <li class="listItemModal"><strong>Landing page</strong> A landing page showing basic information on services.</li>
+                            <li class="listItemModal"><strong>Patient Login</strong> Firebase auth is used for login/user authentication.</li>
+                            <li class="listItemModal"><strong>Next Appointment</strong> The patient's next appointment date is shown at the top of the page. </li>
+                            <li class="listItemModal"><strong>Note from provider</strong> The provider can write a note displayed on the patient's personalized webpage. </li>
+                            <li class="listItemModal"><strong>Video Links</strong> Embedded links such as video demonstrations from the provider can be shown. </li>
+                        </div>
+                        <div>
+                           
+                            <li class="listItemModal"><strong>Patient Information</strong> Patient information is shown towards the bottom of the page, which can be made editable by the patient on the admin page. </li>
+                            <li class="listItemModal"><strong>Contact button</strong> A button to send a message to the provider is shown at the top of the page.</li>
+                            <li class="listItemModal"><strong>Web contact form</strong> A call to action button on the main page leads to a contact form for potential patients.</li>
+                           
+                        </div>
+                    </ul>
+                   
+                </p>
+            </div> 
+            <div class="gridTgt1_2" id="gridBox4">
+                <div class="iframeContainer">
+                    <iframe class="responsive-iframe" src="https://player.vimeo.com/video/519798984" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+    
+</div>
+
+    
+</body>
+</html>

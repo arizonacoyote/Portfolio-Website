@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My freeCodeCamp Pomodoro Timer</title>
+  <meta name="My freeCodeCamp Pomodoro Timer">
+  
+  <style>
+    body{
+      position: relative;
+      font-family:arial;
+      background-image: url('https://wallpapercave.com/wp/06OF1kv.jpg');
+      background-position: center;
+      background-size:cover;
+      background-repeat: no-repeat;
+    }
+    
+    h1{
+      text-align:center; 
+      color: #fafafa;/*#43264D;*/
+      font-size: 6vw;
+     /* text-shadow: 3px 3px rgb(100,100,100);*/
+    }
+    
+    h2{
+      color: white;
+    }
+    
+    
+    #controls-container{
+      position:relative;
+      display:grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 1fr 1fr;
+      height: 100%;
+      width: 60%;
+      left: 20%;
+      justify-content: center;
+      opacity: 1;
+      z-index: 2;
+      grid-gap: 1.5vw;
+
+      
+                   
+    }
+    
+    /*#background-image-wrapper{
+      
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+    }*/
+    
+     .subdivisions{
+      justify-self: center;
+      align-self: center;
+      padding: 1vw;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      font-weight: bold;
+      background: #fafafa;
+      font-size: max(20px, 2.5vw);
+      border-radius: 50%;
+      
+      margin: .4vw;
+     /* background-color: rgba(255,255,255,.1);
+      box-shadow: .2vw .2vw .2vw .2vw rgba(230,245,230,.5);
+      z-index: 2;
+      opacity:1;*/
+      
+     }
+    
+    .subdivisions1{
+      text-align: center;
+      justify-self: center;
+      align-self: center;
+      padding: 1vw;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      font-weight: bold;
+      border:.3vw solid #D4A1E5;
+      background-color: white;
+      border-radius: .4vw;
+     }
+    
+    .subdivisions1:hover{
+      background-color: #8A5C99;
+      color:#fafafa;
+      transition: .3s;
+      box-shadow: 0vw 0vw .1vw .1vw, rgba(230,245,230,.3);
+      
+      
+      
+    }
+    
+    #buttons{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;  
+      width: auto;   
+      
+    }
+    #buttons2{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr; 
+      width: auto;    
+      
+    }
+    #start-stop-reset-container{
+      display:grid;
+      grid-template-columns: 20% 20%;
+      justify-content: center;
+      align-items: center;
+      justify-self: center;
+      align-self: center;
+    
+     
+    }
+    
+    #break-label, #session-label{
+      /*text-shadow: .1vw .1vw black;*/
+      color: white;
+      background-color: rgba(61, 77, 31,.5);
+      border-radius: .4vw;
+      
+    }
+        
+    #time-left{
+        font-size: max(20px, 1.8vw);
+        color: white;
+        font-weight:700;
+    }
+   
+    #session-length,#break-length{
+      border: .5vw solid #8A5C99;
+    }
+    
+  </style>
+</head>
+<body>
+  <!--<img id="background-image-wrapper" src="https://wallpapercave.com/wp/06OF1kv.jpg">-->
+  <div id="target"></div>
+  
+
+    <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+  <script src="pomodoro.js" type="text/babel" ></script>
+</body>  
+</html>

@@ -1,0 +1,145 @@
+/*8888888888888888888888888888 Patient Management Modal  88888888888888888888 
+
+I moved this modal to it's own page.  The modal overfilled the page and was awkward.
+
+*/
+
+#patientManagementModal{
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%,-0%);
+    background-color: #f2f2f2;
+    padding-top: 5rem;
+    padding-bottom:3em;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    box-shadow: 2px 2px 3px grey; 
+    z-index: 50;
+    animation-name: showVidModal;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: auto;
+    
+}
+
+
+
+@keyframes showVidModal{
+    0%{
+       opacity:0;
+    }
+    100%{
+       opacity:1;
+    }
+}
+
+#patientManagementModalcontainer{
+    display:grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    gap: 1em;
+    height: auto;
+    
+      
+}
+
+#gridBox1{
+    grid-area: 1/1/2/2;
+}
+
+#gridBox3{
+    grid-area: 1/2/2/3;
+    padding-top:0;
+}
+
+#gridBox2{
+    grid-area: 2/1/3/2;
+}
+
+#gridBox4{
+    grid-area: 2/2/3/3;
+}
+
+
+.vidModalList{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.listItemModal{
+    flex: 1 1 50%;
+    font-size:14px;
+    line-height: 17px;
+    letter-spacing: 1px;
+    width: 40ch;
+    padding: 5px;
+}
+
+
+
+@media (max-width: 1000px){
+    #patientManagementModalcontainer{
+    display: block;
+    }
+    #patientManagementModal{
+    width: 100%;
+        
+    }
+    .gridTgt1{
+     width: 100%;
+    }
+  
+}
+
+.gridTgt1_1{
+    height: auto;
+}
+
+
+.vidModalText{
+    position: relative;
+    width: max(40ch,60%);
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: .5em;*/
+    line-height: 1rem;
+    padding: 1rem;
+
+}
+
+.iframeContainer{
+    position: relative;
+    overflow: hidden;
+   
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+   
+  }
+
+  #ptScreenReturnBtn{
+    width:80%; 
+    border:none; 
+    background-color: #002c47;
+  }
+
+  #ptScreenReturnBtn:hover{
+    background-color:#005e99;  
+    
+  }

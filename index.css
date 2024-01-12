@@ -1,0 +1,1061 @@
+:root {
+  --whiteGradient: linear-gradient(
+    rgba(156, 156, 156, 0) 24%,
+    rgba(255, 255, 255, 1) 25%
+  );
+  background-color: #002c47;
+  margin-right: 0;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #4b83a6;
+  overflow: scroll; /* Show scrollbars */
+}
+
+h1,
+p {
+  font-family: "Roboto-Condensed", sans-serif;
+}
+
+/* 888888888888888888   Navbar  88888888888888888888888888888888888888*/
+#navbar {
+  background-image: linear-gradient(rgb(148, 148, 148), rgb(120, 120, 120));
+
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: max(70px, 10vh);
+  width: 100%;
+  background-size: 400%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
+
+.btnTop {
+  background-color: rgba(0, 0, 0, 0);
+  font-family: Poppins, roboto-condensed, sans-serif;
+  font-weight: 400;
+  font-size: max(14px, 1vw);
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+
+.btnTop:hover {
+  color: orange;
+}
+
+#name {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: max(25px, 1.9vw);
+  letter-spacing: 0.115em;
+  width: auto;
+  z-index: 8;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  #name {
+    left: 5%;
+  }
+}
+
+/*8888888888888888888888888 End Navbar  8888888888888888888888888888*/
+
+@keyframes move-up {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+#headlineText {
+  position: absolute;
+  width: 100%;
+  font-weight: 800;
+  --fontSizeHeadline: max(34px, 2.5vw);
+  font-size: var(--fontSizeHeadline);
+  line-height: 0.9em;
+  top: 30vh;
+  z-index: 9;
+  height: 50%;
+  width: 80%;
+  color: white;
+}
+#subHeadline {
+  position: relative;
+  left: 35vw;
+  opacity: 0;
+  animation-name: upAndFadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  width: 75%;
+
+  /* 
+    Breaks on Chrome.
+    
+    background-image: var(--whiteGradient);
+    background-clip: text;
+    background-size: 100% 400%;
+    color: transparent;
+    background-position: top;
+    animation-delay: .5s;
+    animation-name: move-up;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    */
+}
+
+#subHeadline2 {
+  position: relative;
+  left: 35vw;
+  animation-name: upAndFadeIn;
+  opacity: 0;
+  animation-delay: 1.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  width: 75%;
+}
+
+.subHeadline3 {
+  position: relative;
+  left: 35vw;
+  font-size: max(14px, 1vw);
+  font-weight: 400;
+  letter-spacing: 0.045em;
+  margin-top: 0.5em;
+  color: rgb(250, 250, 250);
+  line-height: 1em;
+  font-family: Poppins;
+  animation-name: upAndFadeIn;
+  opacity: 0;
+  animation-delay: 2s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  width: 75%;
+}
+
+@keyframes upAndFadeIn {
+  0% {
+    top: 1em;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0em;
+    opacity: 1;
+  }
+}
+
+#contactButtonHeadline {
+  position: relative;
+  left: 35vw;
+  font-size: max(16px, 1.7vw);
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 0.7vh 2vw 0.7vh 2vw;
+  /*  background-color: rgba(255,255,255,1);/*  #0080D1; */
+  color: #fff; /*#0080D1;/* #fff */
+  background-image: linear-gradient(45deg, #2a4a5e, #6ab9eb, #4d87ab);
+  background-size: 400%;
+  opacity: 0;
+  /* top: calc(3.5*(var(--fontSizeHeadline)));*/
+  border: 2px solid #0080d1;
+  z-index: 8;
+  border: none;
+  box-shadow: 2px 2px 1px 2px rgba(50, 50, 50, 0.2);
+  outline: 2px solid rgba(255, 255, 255, 0); /*#0080D1;*/
+  outline-offset: -2px;
+  animation: show-last 0.5s ease-out 2.5s forwards,
+    movingBtnGradient 12s ease-in-out 0.5s infinite both;
+}
+
+@keyframes movingBtnGradient {
+  0% {
+    background-position: right;
+  }
+
+  50% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+#contactButtonPlane {
+  transition: all 0.8s ease-in-out;
+  transform: rotate(0deg);
+}
+
+#contactButtonHeadline:hover {
+  transition: all 0.8s ease-out;
+  outline-offset: -7px;
+  outline: 2px solid rgba(255, 255, 255, 1);
+}
+
+@keyframes show-last {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+#waveContainer {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  background-image: linear-gradient(
+    155deg,
+    #284558,
+    #94b8cc,
+    #fff
+  ); /*linear-gradient(#4b83A6,#94b8cc,#fff); */
+}
+
+#starAreaContainer {
+  position: absolute;
+  width: 80vw;
+  height: 30vh;
+  top: 70px;
+  z-index: 2;
+}
+
+#starArea {
+  position: absolute;
+  width: 80vw;
+  height: 30vh;
+  top: 70px;
+  z-index: 2;
+}
+
+@keyframes starSparkle {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+#shootingStar {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 2px;
+  height: 2px;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+  transition: 3s ease-out;
+  animation-name: starMove;
+  animation-fill-mode: forwards;
+
+  animation-duration: 2s;
+  z-index: 3;
+}
+
+@keyframes starMove {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+#gapfill {
+  position: absolute;
+  background-color: #002c47;
+  width: 100%;
+  height: 40vh;
+  bottom: -40vh;
+  z-index: 10;
+}
+
+@media (max-height: 700px) {
+  #waveContainer {
+    top: min(70px, 20vh);
+  }
+  #gapfill {
+    display: none;
+  }
+}
+
+#diagonalBack {
+  position: absolute;
+  bottom: 25vh;
+  --diagonal1Width: 70vw; /*Scale the svg with this*/
+  width: var(--diagonal1Width);
+  height: calc(0.437 * (var(--diagonal1Width)));
+  z-index: 8;
+  left: 0;
+  overflow: hidden;
+}
+@media (max-height: 700px) {
+  #diagonalBack,
+  #diagonalBack2 {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  #diagonalBack {
+    width: 98vw;
+    height: 90vw; /*.437*/
+  }
+
+  #mtnSvg1 {
+    transform: scale(2);
+  }
+}
+
+#mtnSvg1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#diagonalBack2 {
+  position: absolute;
+  bottom: 34vh;
+  --diagonal2Width: 30vw;
+  width: var(--diagonal2Width);
+  height: calc(0.9 * (var(--diagonal2Width)));
+  z-index: 8;
+  left: 0vw;
+}
+
+#mtnSvg2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  #diagonalBack2 {
+    width: 98vw;
+    height: 90vw; /*.437*/
+  }
+
+  #mtnSvg2 {
+    transform: scale(1);
+  }
+}
+
+#cloud1 {
+  display: block;
+  position: absolute;
+  top: 9%;
+  width: 35%; /*viewbox keeps the aspect ratio fixed*/
+  left: 62%;
+  z-index: 7;
+  opacity: 1;
+
+  animation-name: cloudMove1;
+  animation-duration: 35s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+#cloud3 {
+  display: none;
+  position: absolute;
+  top: 20%;
+  width: 30%;
+  left: 20%;
+  z-index: 4;
+  animation: cloudMove3;
+  animation-duration: 65s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0.93;
+}
+
+#cloud4 {
+  display: block;
+  position: absolute;
+  top: 37%;
+  width: 15%;
+  left: 60%;
+  z-index: 4;
+  animation: cloudMove3;
+  animation-duration: 50s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0.85;
+}
+
+#cloud5 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  left: 70%;
+  z-index: 4;
+  animation: cloudMove4;
+  animation-duration: 90s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0.75;
+}
+
+@keyframes cloudMove1 {
+  0% {
+    left: 62%; /*transform is more efficient than positioning.  The browser doesn't re-draw the page.*/
+  }
+
+  100% {
+    left: 40%;
+  }
+}
+
+@keyframes cloudMove3 {
+  0% {
+    right: 0%; /*transform:translateX(0%); parallax doesn't work if this is a transform  /*transform is more efficient that positioning*/
+  }
+  100% {
+    right: 160%;
+  }
+}
+
+@keyframes cloudMove4 {
+  0% {
+    right: 60%; /*transform:translateX(60%);*/
+  }
+  100% {
+    right: 100%; /*transform:translateX(100%);*/
+  }
+}
+
+@media (max-width: 1150px) {
+  #cloud1,
+  #cloud2,
+  #cloud3,
+  #cloud4,
+  #cloud5 {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  #cloud1 {
+    top: -30vh;
+  }
+}
+
+@media (max-width: 1150px) {
+  #cloud1 {
+    top: -20vh;
+  }
+}
+
+@media (max-height: 700px) {
+  #cloud1 {
+    top: -20vh;
+  }
+}
+
+#wave1 {
+  position: absolute;
+  z-index: 10;
+  margin-left: 0;
+  top: -50%;
+  width: 99vw; /*set initially to 99vw.  Then set to .clientWidth with JS.  Using 100% sets it equal to the ledge width.*/
+  pointer-events: none; /*the drawing extends above where it appears visually and can interfere with other element's events*/
+  margin-right: 0;
+}
+
+#person {
+  position: absolute;
+  height: 80%;
+  right: 0%;
+  top: -80%;
+  width: auto;
+}
+
+#main {
+  position: relative;
+  background-color: #002c47;
+  margin-top: -20vh;
+  z-index: 11;
+  height: 140vh;
+  width: 100%;
+}
+
+@media (max-height: 800px) {
+  #main {
+    margin-top: 10vh;
+  }
+}
+
+#mainSectionLinkReference {
+  /*compensate for the height the navbar*/
+  position: absolute;
+  --navbarOffset: calc(10vh + max(70px, 10vh));
+  top: calc(-1 * var(--navbarOffset));
+}
+
+#summaryText {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  top: 0vh;
+  height: auto;
+  width: 80vw;
+  z-index: 21;
+  transition: all 0.7s ease-out;
+}
+
+#noStretchSummaryTextContainer1 {
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: max(13px, 1.5vw);
+  line-height: 0.9;
+  margin-top: 3vh;
+  padding: 2vw;
+  padding-top: 1vw;
+  background-image: url("lightpaperfibers.png");
+  width: auto;
+  border-radius: 0.5vw;
+  box-shadow: 2px 1px 1px 1px grey;
+}
+
+#summaryTextContainer2 {
+  font-family: "Roboto Condensed", sans-serif;
+  width: min(60ch, 100%);
+}
+
+#belowHeadline {
+  color: rgb(110, 110, 110);
+  padding-top: 14px;
+  font-size: clamp(13px, 1.8vw, 18px);
+  max-width: 70ch;
+  line-height: 1.564em;
+  z-index: 7;
+}
+
+/**********8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
+
+#workSamples {
+  margin-top: 3vh;
+  position: relative; /*2vw padding on container above*/
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
+  grid-gap: 0.5em;
+  transition: 0.5s;
+  z-index: 7;
+  width: 100%;
+}
+
+#titleWorkSamples {
+  position: absolute;
+  top: -2em;
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h3 {
+  margin: 1vw;
+}
+
+.work-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: start;
+  flex-basis: 1fr;
+  padding: 1.4vw;
+  background-image: url("lightpaperfibers.png");
+  transition: height 0.5s;
+  transition-timing-function: ease-in;
+  z-index: 30;
+}
+
+.project-headline {
+  font-size: clamp(17px, 4vh, 26px);
+  padding: 0.3em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.project-below-headline {
+  opacity: 0.7;
+  font-size: clamp(15px, 1.8vw, 18px);
+  width: min(20em, 80%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-icon {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(-0%, -50%);
+  font-size: min(75px, 400%);
+  opacity: 0.1;
+  height: auto;
+}
+
+.work-content-text {
+  width: min(25em, 90%);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2em;
+}
+
+.work-content-text::before {
+  content: " ";
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 10%;
+  height: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0081d0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  animation-name: expand;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes expand {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+#work-content-text1,
+#work-content-text2,
+#work-content-text3 {
+  display: none;
+  transition: 1s;
+  animation: displaying;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  color: rgb(110, 110, 110);
+  font-size: max(14px, 0.8vw);
+}
+
+@keyframes displaying {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#work-content1,
+#work-content2,
+#work-content3 {
+  height: auto; /*4em;*/
+  background-color: #fafafa;
+  border-radius: 0.7vw;
+  box-shadow: 1px 1px 1px 1px grey;
+  position: relative;
+  transition: height 0.5s;
+}
+
+/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
+
+#ledge {
+  display: block;
+  position: absolute;
+  top: clamp(400px, 50%, 700px);
+  left: 0%;
+  width: clamp(80px, 15%, 600px);
+  height: 25%;
+  background-image: url("brickwall_@2X.png");
+  z-index: 9;
+  border-radius: 2px;
+  background-color: rgb(102, 84, 84);
+  opacity: 1;
+  box-shadow: 1px 1px 2px 2px grey;
+}
+
+#waveTriggerArea {
+  display: block;
+  position: absolute;
+  top: 70%;
+  left: 0vw;
+  width: 95vw;
+  height: 5%;
+  background-color: red;
+  opacity: 0;
+  z-index: 27;
+  pointer-events: auto;
+}
+
+.fab {
+  visibility: hidden;
+  /*a function in parallax.js flips this visibility property to 'visible' on load.
+    The icons were showing up a split second scattered around the screen before being 
+    positioned.  Changing this to an initial value of 'hidden' seems to fix the problem.*/
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+}
+
+#htmlLogo {
+  position: absolute; /* this is the white background*/
+  height: clamp(12px, 6.5vw, 70px);
+  width: clamp(12px, 5.5vw, 55px);
+  background-color: white;
+  z-index: 11;
+  left: 30%;
+  border-radius: 0.5vw;
+}
+
+#htmlLogoForeground {
+  position: absolute;
+  left: -0.7vw;
+  top: -0.8vw; /*This is the logo which is a child of 'htmlLogo'. */
+  z-index: 12;
+  font-size: clamp(20px, 10vw, 100px);
+  color: #f16529;
+  z-index: 5;
+}
+
+#jsLogo {
+  position: absolute;
+  left: 0%; /*  Starting position for logo animation */
+  bottom: 40vw;
+  font-size: clamp(24px, 15vw, 140px);
+  color: #f7df1e;
+  z-index: 13;
+}
+
+#reactLogo {
+  position: absolute;
+  left: 70%;
+  font-size: clamp(24px, 12vw, 120px);
+  z-index: 14;
+  color: white;
+  bottom: 40vw;
+}
+
+#cssLogo {
+  position: absolute;
+  left: 55%;
+  z-index: 5;
+  width: clamp(14px, 7vw, 70px);
+  height: clamp(16.4px, 8.2vw, 82px);
+  border-radius: 20%;
+  background: white;
+  bottom: 40vw;
+  z-index: 15;
+  background: #2965f1;
+}
+
+#cssLogoForeground {
+  position: absolute;
+  top: -1.5vh;
+  left: -0.8vh;
+  font-size: clamp(24px, 12vw, 120px);
+  z-index: 16;
+  color: #fafafa; /*#2965f1;   this doesn't stick out enough*/
+}
+
+#nodeLogo {
+  position: absolute;
+  left: 85%;
+  font-size: clamp(40px, 10vw, 100px);
+  z-index: 17;
+  color: #8ed487;
+  bottom: 40vh;
+}
+
+#bootstrapLogo {
+  position: absolute;
+  left: 90%;
+  top: 1vh;
+  font-size: 5vh;
+  width: 4.5vh;
+  height: 4.5vh;
+  z-index: 5;
+  color: #91527e;
+  bottom: 40vh;
+  z-index: 19 !important;
+  opacity: 1;
+  background: white;
+  padding: 0;
+  border-radius: 20%;
+}
+
+#bootstrapLogo2 {
+  position: absolute;
+  top: -0.5vh;
+  height: 5vh;
+  width: 5vh;
+  font-size: 6vh;
+  margin: 0;
+  z-index: 18;
+}
+
+#sassLogo {
+  position: absolute;
+  left: 5%;
+  font-size: clamp(16px, 8vw, 80px);
+  z-index: 20;
+  color: #cd6799;
+  bottom: 40vh;
+}
+
+/*888888888888888888888888888888888888888888888 contact form  8888888888888888888888888888888888888888888888888888888888888888888*/
+
+#contactForm {
+  display: none;
+  position: fixed;
+  width: 75%;
+  left: 12.5%;
+  height: min(98vh, auto);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 27;
+  background-image: url("extra_clean_paper.png");
+  color: black;
+  padding: 2vw;
+
+  border-radius: 1vw;
+  animation-name: showContactForm;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes showContactForm {
+  0% {
+    top: -50vh;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 50vh;
+    transform: translateY(-50%);
+  }
+}
+
+#darkOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 170vh;
+  width: 100vw;
+  background-color: rgb(20, 20, 20);
+  opacity: 50%;
+  z-index: 26;
+  animation-name: darkTransition;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes darkTransition {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}
+
+#contactSuccess {
+  display: none;
+  background-color: #002c47;
+  color: white;
+  position: fixed;
+  width: auto;
+  height: auto;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  padding: 2em;
+  font-size: clamp(13px, 2vw, 24px);
+  border: none;
+  border-radius: 0.6vw;
+}
+
+#contactFail {
+  display: none;
+  background-color: #962e2e;
+  color: white;
+  position: fixed;
+  width: auto;
+  height: auto;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  padding: 2em;
+  font-size: clamp(13px, 2vw, 24px);
+  border: none;
+  border-radius: 0.6vw;
+}
+
+/*8888888888888888888888888888 Patient Management Modal  88888888888888888888 */
+
+#patientManagementModal {
+  display: none;
+  position: absolute;
+  width: min(1600px, 90%);
+  top: 90vh;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  background-color: #f2f2f2;
+  padding: 2em;
+  padding-bottom: 3em;
+  box-shadow: 2px 2px 3px grey;
+  z-index: 50;
+  border-radius: 1em;
+  animation-name: showVidModal;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  height: auto;
+}
+
+hr {
+  margin: 0;
+}
+
+@keyframes showVidModal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#patientManagementModalcontainer {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  padding-top: 0em;
+  gap: 1em;
+  height: auto;
+}
+
+#gridBox1 {
+  grid-area: 1/1/2/2;
+}
+
+#gridBox3 {
+  grid-area: 1/2/2/3;
+  padding-top: 0;
+}
+
+#gridBox2 {
+  grid-area: 2/1/3/2;
+}
+
+#gridBox4 {
+  grid-area: 2/2/3/3;
+}
+
+.vidModalList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.listItemModal {
+  flex: 1 1 50%;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  width: 40ch;
+  padding: 5px;
+}
+
+@media (max-width: 1300px) {
+  #patientManagementModalcontainer {
+    display: block;
+  }
+  #patientManagementModal {
+    top: 80vh;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: min(800px, 95%);
+  }
+  .gridTgt1 {
+    width: 100%;
+  }
+}
+
+.gridTgt1_1 {
+  height: auto;
+}
+
+.vidModalText {
+  position: relative;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5em;
+  line-height: 1rem;
+}
+
+.iframeContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
